@@ -32,7 +32,7 @@ let SMSyncConflictsResolvedRecordsKey = "SMSyncConflictsResolvedRecordsKey"
 
 let SMCloudRecordNilValue = "@!SM_CloudStore_Record_Nil_Value"
 
-enum SMSyncConflictResolutionPolicy: Int16 {
+public enum SMSyncConflictResolutionPolicy: Int16 {
     case ClientTellsWhichWins = 0
     case ServerRecordWins = 1
     case ClientRecordWins = 2

@@ -40,7 +40,7 @@ struct SMStoreRecordChangeType {
 public let SMStoreDidStartSyncOperationNotification = "SMStoreDidStartSyncOperationNotification"
 public let SMStoreDidFinishSyncOperationNotification = "SMStoreDidFinishSyncOperationNotification"
 
-let SMStoreSyncConflictResolutionPolicyOption = "SMStoreSyncConflictResolutionPolicyOption"
+public let SMStoreSyncConflictResolutionPolicyOption = "SMStoreSyncConflictResolutionPolicyOption"
 
 let SMStoreErrorDomain = "SMStoreErrorDomain"
 
