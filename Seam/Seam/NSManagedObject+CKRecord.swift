@@ -44,6 +44,8 @@ extension NSManagedObject {
                     ckRecord.setObject(self.valueForKey(attributeDescription!.name) as! String, forKey: attributeDescription!.name)
                 case .DateAttributeType:
                     ckRecord.setObject(self.valueForKey(attributeDescription!.name) as! NSDate, forKey: attributeDescription!.name)
+                case .TransformableAttributeType:
+                    fallthrough
                 case .BinaryDataAttributeType:
                     ckRecord.setObject(self.valueForKey(attributeDescription!.name) as! NSData, forKey: attributeDescription!.name)
                 case .BooleanAttributeType:
