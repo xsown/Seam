@@ -53,17 +53,21 @@ class SMStoreChangeSetHandler {
     }
     
     func addExtraBackingStoreAttributes(toEntity entity: NSEntityDescription) {
-        let recordIDAttribute: NSAttributeDescription = NSAttributeDescription()
-        recordIDAttribute.name = SMLocalStoreRecordIDAttributeName
-        recordIDAttribute.optional = false
-        recordIDAttribute.indexed = true
-        recordIDAttribute.attributeType = NSAttributeType.StringAttributeType
-        entity.properties.append(recordIDAttribute)
-        let recordEncodedValuesAttribute: NSAttributeDescription = NSAttributeDescription()
-        recordEncodedValuesAttribute.name = SMLocalStoreRecordEncodedValuesAttributeName
-        recordEncodedValuesAttribute.attributeType = NSAttributeType.BinaryDataAttributeType
-        recordEncodedValuesAttribute.optional = true
-        entity.properties.append(recordEncodedValuesAttribute)
+        if entity.attributesByName[SMLocalStoreRecordIDAttributeName] == nil {
+            let recordIDAttribute: NSAttributeDescription = NSAttributeDescription()
+            recordIDAttribute.name = SMLocalStoreRecordIDAttributeName
+            recordIDAttribute.optional = false
+            recordIDAttribute.indexed = true
+            recordIDAttribute.attributeType = NSAttributeType.StringAttributeType
+            entity.properties.append(recordIDAttribute)
+        }
+        if entity.attributesByName[SMLocalStoreRecordEncodedValuesAttributeName] == nil {
+            let recordEncodedValuesAttribute: NSAttributeDescription = NSAttributeDescription()
+            recordEncodedValuesAttribute.name = SMLocalStoreRecordEncodedValuesAttributeName
+            recordEncodedValuesAttribute.attributeType = NSAttributeType.BinaryDataAttributeType
+            recordEncodedValuesAttribute.optional = true
+            entity.properties.append(recordEncodedValuesAttribute)
+        }
     }
     
     func changeSetEntity() -> NSEntityDescription {
