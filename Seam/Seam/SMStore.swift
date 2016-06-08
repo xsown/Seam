@@ -68,7 +68,7 @@ public class SMStore: NSIncrementalStore {
     private var backingPersistentStoreCoordinator: NSPersistentStoreCoordinator?
     private var backingPersistentStore: NSPersistentStore?
     var syncAutomatically: Bool = true
-    var recordConflictResolutionBlock:((clientRecord:CKRecord,serverRecord:CKRecord)->CKRecord)?
+    public var recordConflictResolutionBlock:((clientRecord:CKRecord,serverRecord:CKRecord)->CKRecord)?
     private lazy var backingMOC: NSManagedObjectContext = {
         var moc = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
         moc.persistentStoreCoordinator = self.backingPersistentStoreCoordinator
